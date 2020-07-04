@@ -1,13 +1,21 @@
 <template>
-  <div class="flex h-screen w-full bg-gray-700">
+  <div class="flex h-screen w-full bg-gray-700 ">
     <div class="m-auto w-full px-5 md:w-1/3">
     <form>
       <inputElement 
         :labelName="'EMAIL'"
         :labelId="'email'"
-        :inputType"'email'"
+        :inputType="'email'"
         :model="email"
         @input="email = $event"
+        :disabled="false"
+        />
+        <inputElement 
+        :labelName="'PASSWORD'"
+        :labelId="'password'"
+        :inputType="'password'"
+        :model="password"
+        @input="password = $event"
         :disabled="false"
         />
         <button type="button"> SIGN IN </button>
@@ -24,7 +32,7 @@ export default {
     nuxtLogo,
     InputElement
   },
-  data: function(){
+  data: function(){    //variables to store input
     return{
       email:"",
       password:""
@@ -32,49 +40,8 @@ export default {
   }
 }
 </script>
+<style scoped>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
+
+

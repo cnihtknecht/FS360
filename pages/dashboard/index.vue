@@ -10,6 +10,8 @@
                     :options="revenueMonthly.barChartOptions" :height="120"></barChart>
                 </div>
             </template>
+
+
         </contentCard>   
     </div>
 </template>
@@ -30,7 +32,7 @@ grey: 'rgb(201, 203, 207)'
 };
 
     export default {
-        layout: "dashboard",
+        layout: "dashboard",   //uses the ~/layouts/dashboard.vue instead of default.vue
         components:{
             ContentCard,
             BarChart,
@@ -40,7 +42,7 @@ grey: 'rgb(201, 203, 207)'
             return{
                 revenueMonthly:{
                     barChartData: {
-                        labels:['Jan','Feb', 'Mar', 'Apr', 'May'],
+                        labels:['Jan','Feb', 'Mar', 'Apr', 'May','Jun','Jul','Aug'],
                         datasets: [
                         {
                             label: 'Income',
@@ -49,8 +51,12 @@ grey: 'rgb(201, 203, 207)'
                                 chartColors.red,
                                 chartColors.blue,
                                 chartColors.purple,
-                                chartColors.grey],
-                            data: [5, 3, 4, 6, 4]
+                                chartColors.grey,
+                                chartColors.yellow,
+                                chartColors.orange,
+                                chartColors.red
+                                ],
+                            data: [5, 3, 4, 6, 4, 2, 3, 7]
                         }   
                         ],    
                     },

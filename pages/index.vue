@@ -51,6 +51,17 @@
 import nuxtLogo from '~/components/items/Logo.vue';
 import InputElement from "~/components/items/Input.vue";
 export default {
+  transition:{
+    name:"inventory",    //can be any name but make sure all pages use this same name!
+    mode:"out-in",
+    duration: { enter:1000, leave:500},
+    enterActiveClass: "animated fadeIn",
+    leaveActiveClass: "animated fadeOut"
+  },
+
+
+
+
   components:{
     nuxtLogo,
     InputElement

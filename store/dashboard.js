@@ -6,7 +6,7 @@ const defaultState = () => {
 
 export const state = () => defaultState();
 
-export const mutations = {
+export const mutations ={
     toggleMenu(state){
         state.showMenu = !state.showMenu
     }

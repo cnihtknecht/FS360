@@ -1,5 +1,5 @@
 <template>
-    <div class="{
+    <div :class="{
                 'flex':true,
                 'flex-col':true,
                 'w-56':showMenu,

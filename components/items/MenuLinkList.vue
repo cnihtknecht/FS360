@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex justify-between items-center">
-            <nuxt-link :to="url" class="{
+            <nuxt-link :to="url" :class="{
                 'w-56':showMenu,
                 'w-16':!showMenu,
                 'py-4':true,

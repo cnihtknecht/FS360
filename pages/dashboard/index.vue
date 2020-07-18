@@ -49,55 +49,16 @@ grey: 'rgb(201, 203, 207)'
         
         data(){
             return{
-                revenueMonthly:{
-                    barChartData: {
-                        labels:['Jan','Feb', 'Mar', 'Apr', 'May','Jun','Jul','Aug'],
-                        datasets: [
-                        {
-                            label: 'Income',
-                            //barThickness: 25,
-                            backgroundColor: [
-                                chartColors.green,
-                                chartColors.red,
-                                chartColors.blue,
-                                chartColors.purple,
-                                chartColors.grey,
-                                chartColors.yellow,
-                                chartColors.orange,
-                                chartColors.red
-                                ],
-                            //data: [512, 300, 443, 605, 400, 239, 343, 776]
-                            data: [{x:'2016-12-20', y:20}, {x:'2016-12-21', y:10},
-                            {x:'2016-12-22', y:30},{x:'2016-12-23', y:23},
-                            {x:'2016-12-24', y:53},{x:'2016-12-25', y:47},
-                            {x:'2016-12-26', y:12},{x:'2016-12-27', y:18}]
-
-                        }   
-                        ],    
-                    },
-                    barChartOptions: {
-                        responsive: true,
-                        legend: {
-                            display: false,
-                        },
-                        title: {
-                            display: true,
-                            text: 'Monthly Income'
-                        },
-                        scales: {
-                            yAxes: [
-                                {
-                                    offset: false,
-                                    ticks: {
-                                        beginAtZero: true,
-                                        suggestedMax: 10
-                                    }
-                                }
-                            ]
-                        }
-                    }
+                revenueMonthly: {
+                    barChartData:{},
+                    barChartOptions:{}
                 }
             }
         },
+        async mounted(){
+            await this.$apis.dashboard.revenue()
+            .then(res => {this.revenueMonthly = res})
+        }
+
     }
 </script>
